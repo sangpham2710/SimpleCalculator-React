@@ -49,7 +49,7 @@ const buttonNames = {
 };
 
 const normalize = (text, zeros) => {
-	return Math.round(Number(text) * 10 ** zeros) / 10 ** zeros;
+	return (Math.round(Number(text) * 10 ** zeros) / 10 ** zeros).toString();
 };
 
 function App() {

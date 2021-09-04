@@ -10,7 +10,7 @@
 	justify-content: flex-end;
 	padding: 1.2rem;
 	word-wrap: break-word;
-	word-break: break-all;
+	word-break: break-word;
 }
 @media (max-width: 560px) {
 	.calc__screen {
