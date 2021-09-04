@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styles from "./App.module.css";
 import Screen from "./components/Screen";
 import Button from "./components/Button";
@@ -46,12 +47,50 @@ const buttonNames = {
 	"=": "="
 };
 
+const normalize = (text, zeros) => {
+	return Math.round(Number(text) * 10 ** zeros) / 10 ** zeros;
+};
+
 function App() {
+	const [screenValue, setScreenValue] = useState("");
+	const handleClick = (e) => {
+		const input = e.target.getAttribute("name");
+		let updatedTextContent = screenValue;
+		try {
+			switch (input) {
+				case "C":
+					updatedTextContent = "";
+					break;
+				case "D":
+					updatedTextContent = updatedTextContent.slice(0, -1);
+					break;
+				case "%":
+					updatedTextContent = eval(updatedTextContent);
+					updatedTextContent *= 0.01;
+					updatedTextContent = normalize(updatedTextContent, 10);
+					break;
+				case "=":
+					updatedTextContent = eval(updatedTextContent);
+					updatedTextContent = normalize(updatedTextContent, 10);
+					break;
+				default:
+					updatedTextContent += input;
+			}
+		} catch (error) {
+			console.error(error);
+		}
+		setScreenValue(updatedTextContent);
+	};
+
 	return (
 		<div className={styles["calc"]}>
-			<Screen />
+			<Screen>{screenValue}</Screen>
 			{listButtons.map((btn) => (
-				<Button key={buttonNames[btn]} name={buttonNames[btn]}>
+				<Button
+					key={buttonNames[btn]}
+					name={buttonNames[btn]}
+					onClick={handleClick}
+				>
 					{btn}
 				</Button>
 			))}

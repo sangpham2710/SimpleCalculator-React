@@ -14,6 +14,7 @@ const Button = (props) => {
 					? styles["calc__btn--EQ"]
 					: ""
 			}`}
+			onClick={props.onClick}
 		>
 			{props.children}
 		</button>
