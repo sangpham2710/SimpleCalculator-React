@@ -1,0 +1,18 @@
+.calc {
+	display: inline-grid;
+	background-color: var(--gray-shade);
+	padding: 2rem;
+	border-radius: 20px;
+	grid-template-rows: minmax(10rem, auto) repeat(5, 8.4rem);
+	grid-template-columns: repeat(4, 8.4rem);
+	min-height: auto;
+	width: auto;
+	gap: 1.5rem;
+}
+@media (max-width: 560px) {
+	.calc {
+		padding: 1.6rem;
+		grid-template-rows: minmax(8.4rem, auto) repeat(5, 6.4rem);
+		grid-template-columns: repeat(4, 6.4rem);
+	}
+}

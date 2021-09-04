@@ -1,0 +1,19 @@
+.calc__screen {
+	display: flex;
+	grid-row: 1/2;
+	grid-column: 1/-1;
+	background-color: var(--gray);
+	color: #f1f3f5;
+	border-radius: 10px;
+	font-size: 6.4rem;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 1.2rem;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+@media (max-width: 560px) {
+	.calc__screen {
+		font-size: 5.2rem;
+	}
+}

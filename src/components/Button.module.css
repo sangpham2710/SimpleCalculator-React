@@ -1,0 +1,33 @@
+.calc__btn {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	background-color: var(--violet);
+	color: #f1f3f5;
+	font-size: 3.2rem;
+	font-weight: bold;
+	border-radius: 10px;
+	transition: all 0.3s;
+}
+.calc__btn:hover {
+	background-color: var(--violet-shade);
+}
+.calc__btn--AC,
+.calc__btn--EQ,
+.calc__btn--DEL {
+	background-color: var(--red);
+}
+.calc__btn--AC:hover,
+.calc__btn--EQ:hover,
+.calc__btn--DEL:hover {
+	background-color: var(--red-shade);
+}
+.calc__btn--EQ {
+	grid-column: 3 / span 2;
+}
+@media (max-width: 560px) {
+	.calc__btn {
+		font-size: 2.4rem;
+		font-weight: bolder;
+	}
+}
