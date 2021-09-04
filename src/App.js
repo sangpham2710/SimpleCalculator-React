@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import Screen from "./components/Screen";
 import Button from "./components/Button";
+import mexp from "math-expression-evaluator";
 
 const listButtons = [
 	"AC",
@@ -65,12 +66,12 @@ function App() {
 					updatedTextContent = updatedTextContent.toString().slice(0, -1);
 					break;
 				case "%":
-					updatedTextContent = eval(updatedTextContent);
+					updatedTextContent = mexp.eval(updatedTextContent);
 					updatedTextContent *= 0.01;
 					updatedTextContent = normalize(updatedTextContent, 10);
 					break;
 				case "=":
-					updatedTextContent = eval(updatedTextContent);
+					updatedTextContent = mexp.eval(updatedTextContent);
 					updatedTextContent = normalize(updatedTextContent, 10);
 					break;
 				default:
