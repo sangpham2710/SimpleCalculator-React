@@ -62,7 +62,7 @@ function App() {
 					updatedTextContent = "";
 					break;
 				case "D":
-					updatedTextContent = updatedTextContent.slice(0, -1);
+					updatedTextContent = updatedTextContent.toString().slice(0, -1);
 					break;
 				case "%":
 					updatedTextContent = eval(updatedTextContent);
