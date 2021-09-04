@@ -1,5 +1,9 @@
 .calc {
-	display: inline-grid;
+	display: grid;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	background-color: var(--gray-shade);
 	padding: 2rem;
 	border-radius: 20px;
